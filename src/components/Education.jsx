@@ -4,7 +4,7 @@ import './Education.css';
 const Education = () => {
   const education = [
     {
-      institution: 'Open University, Brazil',
+      institution: 'Federal University of Minas Gerais (UFMG), Belo Horizonte',
       degree: 'BSc in Computer Science',
       period: 'Sep 2021 - Present'
     },
