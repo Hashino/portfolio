@@ -29,39 +29,35 @@ npm run preview
 
 ## Deployment to GitHub Pages
 
-This portfolio is configured to deploy to GitHub Pages at `hashino.github.io/portfolio`.
-
-### Initial Setup
-
-1. Create a repository named `portfolio` on GitHub
-2. Initialize git and push your code:
-
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/hashino/portfolio.git
-git push -u origin main
-```
-
-### Deploy
-
-```bash
-npm run deploy
-```
-
-This will build the project and push the `dist` folder to the `gh-pages` branch.
+The built files are in the `/docs` folder on the `main` branch.
 
 ### Enable GitHub Pages
 
 1. Go to your repository settings on GitHub
 2. Navigate to "Pages" in the sidebar
 3. Under "Source", select "Deploy from a branch"
-4. Select the `gh-pages` branch and `/ (root)` folder
+4. Select the `main` branch and `/docs` folder
 5. Click "Save"
 
 Your portfolio will be available at: `https://hashino.github.io/portfolio/`
+
+### Deploy Updated Version
+
+```bash
+# Build and copy to docs folder
+npm run build
+cp -r dist docs
+
+# Commit and push
+git add docs -f
+git commit -m "deploy: build for production"
+git push origin main
+```
+
+Or use the deploy script:
+```bash
+npm run deploy
+```
 
 ## Tech Stack
 
